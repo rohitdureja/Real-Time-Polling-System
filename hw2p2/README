@@ -1,0 +1,38 @@
+Polling system using UDP
+------------------------
+
+CIS 505: Software Systems
+Homework 2 Part II
+Submitted by: Rohit Dureja
+
+---
+
+Steps involved to run system using UDP
+
+1. use make to compile all files. "make all"
+
+2. in a terminal window, run the server using
+	./server <address> <port>
+
+3. In a seperate terminal window, run the client using
+	./client <address> <port> -options
+
+Instead of step 3, a script has been provided which can be run to simulate a voting scenario. To run the script, after step 2, run
+	chmod u+rx script
+	./script
+
+4. stop server and clean up using make. "make clean"
+
+---
+
+Option for system using UDP
+
+	zeroize():				 .\client <IPaddress> <port> -z
+	addvoter(voterid):		 .\client <IPaddress> <port> -a -i <voterID>		
+	votefor(name, voterid):	 .\client <IPaddress> <port> -v -n <name> -i <voterID>
+	listcandidates():		 .\client <IPaddress> <port> -l
+	votecount(name):		 .\client <IPaddress> <port> -c -n <name>
+
+---
+
+

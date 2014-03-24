@@ -1,0 +1,19 @@
+struct Vote {
+	string name<>;
+	int voterid;
+};
+
+struct Candidates {
+	string name<>;
+	struct Candidates *next;
+};
+
+program POLL_PROG {
+	version POLL_VERS {
+		string zeroize(void) = 1;
+		string addvoter(int) = 2;
+		string votefor(Vote) = 3;
+		Candidates listcandidates(void) = 4;
+		int votecount(string) = 5;
+	} = 1;
+} = 0x23451111;

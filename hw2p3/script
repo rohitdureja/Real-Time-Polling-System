@@ -1,0 +1,79 @@
+#!/bin/bash
+# This script clears the terminal, and carries out certain poll_client commands.
+# It calls the zeroize() function, adds five voters, casts vote for three candidates, 
+# displays the candidate list and finally checks votes for each candidate
+
+clear
+
+echo -e "The script starts now"
+
+echo -e ""
+
+echo -e "Calling zeroize()"
+./poll_client localhost -z
+
+echo -e ""
+
+echo -e "Adding voter with id 34"
+./poll_client localhost -a -i 34
+
+echo -e "Adding voter with id 35"
+./poll_client localhost -a -i 35
+
+echo -e "Adding voter with id 36"
+./poll_client localhost -a -i 36
+
+echo -e "Adding voter with id 36"
+./poll_client localhost -a -i 36
+
+echo -e "Adding voter with id 37"
+./poll_client localhost -a -i 37
+
+echo -e "Adding voter with id 38"
+./poll_client localhost -a -i 38
+
+echo -e ""
+
+echo -e "Voter 34 casting vote for brad"
+./poll_client localhost -v -n brad -i 34
+
+echo -e "Voter 35 casting vote for angelina"
+./poll_client localhost -v -n angelina -i 35
+
+echo -e "Voter 36 casting vote for brangeina"
+./poll_client localhost -v -n brangelina -i 36
+
+echo -e "Voter 34 casting vote for brad"
+./poll_client localhost -v -n brad -i 34
+
+echo -e "Voter 37 casting vote for angelina"
+./poll_client localhost -v -n angelina -i 37
+
+echo -e "Voter 38 casting vote for brangelina"
+./poll_client localhost -v -n brangelina -i 38
+
+echo -e "Voter 39 casting vote for rohit"
+./poll_client localhost -v -n rohit -i 39
+
+echo -e ""
+
+echo -e "List candidates with votes greater than zero"
+./poll_client localhost -l
+
+echo -e ""
+
+echo -e "List vote count for brad"
+./poll_client localhost -c -n brad
+
+echo -e "List vote count for angelina"
+./poll_client localhost -c -n angelina
+
+echo -e "List vote count for brangelina"
+./poll_client localhost -c -n brangelina
+
+echo -e "List vote count for aniston"
+./poll_client localhost -c -n aniston
+
+echo -e "Bye Bye!"
+
+

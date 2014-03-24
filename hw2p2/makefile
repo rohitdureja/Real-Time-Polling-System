@@ -1,0 +1,14 @@
+SERVER = server.c
+CLIENT = client.c
+SERVEROBJ = server
+CLIENTOBJ = client
+CFLAGS = -o
+COMPILER = gcc
+
+all: $(SERVER) $(CLIENT)
+	$(COMPILER) $(CFLAGS) $(SERVEROBJ) $(SERVER)
+	$(COMPILER) $(CFLAGS) $(CLIENTOBJ) $(CLIENT)
+
+clean: $(SERVEROBJ) $(CLIENTOBJ)
+	rm $(CLIENTOBJ)
+	rm $(SERVEROBJ)

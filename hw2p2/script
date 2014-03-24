@@ -1,0 +1,84 @@
+#!/bin/bash
+# This script clears the terminal, and carries out certain client commands.
+# It calls the zeroize() function, adds five voters, casts vote for three candidates, 
+# displays the candidate list and finally checks votes for each candidate
+
+echo "Please enter the server address: "
+read SERVERADDR
+echo "Please enter the port number: "
+read PORT
+
+clear
+
+echo -e "The script starts now"
+
+echo -e ""
+
+echo -e "Calling zeroize()"
+./client $SERVERADDR $PORT -z
+
+echo -e ""
+
+echo -e "Adding voter with id 34"
+./client $SERVERADDR $PORT -a -i 34
+
+echo -e "Adding voter with id 35"
+./client $SERVERADDR $PORT -a -i 35
+
+echo -e "Adding voter with id 36"
+./client $SERVERADDR $PORT -a -i 36
+
+echo -e "Adding voter with id 36"
+./client $SERVERADDR $PORT -a -i 36
+
+echo -e "Adding voter with id 37"
+./client $SERVERADDR $PORT -a -i 37
+
+echo -e "Adding voter with id 38"
+./client $SERVERADDR $PORT -a -i 38
+
+echo -e ""
+
+echo -e "Voter 34 casting vote for brad"
+./client $SERVERADDR $PORT -v -n brad -i 34
+
+echo -e "Voter 35 casting vote for angelina"
+./client $SERVERADDR $PORT -v -n angelina -i 35
+
+echo -e "Voter 36 casting vote for brangeina"
+./client $SERVERADDR $PORT -v -n brangelina -i 36
+
+echo -e "Voter 34 casting vote for brad"
+./client $SERVERADDR $PORT -v -n brad -i 34
+
+echo -e "Voter 37 casting vote for angelina"
+./client $SERVERADDR $PORT -v -n angelina -i 37
+
+echo -e "Voter 38 casting vote for brangelina"
+./client $SERVERADDR $PORT -v -n brangelina -i 38
+
+echo -e "Voter 39 casting vote for rohit"
+./client $SERVERADDR $PORT -v -n rohit -i 39
+
+echo -e ""
+
+echo -e "List candidates with votes greater than zero"
+./client $SERVERADDR $PORT -l
+
+echo -e ""
+
+echo -e "List vote count for brad"
+./client $SERVERADDR $PORT -c -n brad
+
+echo -e "List vote count for angelina"
+./client $SERVERADDR $PORT -c -n angelina
+
+echo -e "List vote count for brangelina"
+./client $SERVERADDR $PORT -c -n brangelina
+
+echo -e "List vote count for aniston"
+./client $SERVERADDR $PORT -c -n aniston
+
+echo -e "Bye Bye!"
+
+

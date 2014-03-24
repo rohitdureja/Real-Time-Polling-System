@@ -1,0 +1,37 @@
+Polling System using RPCs
+-------------------------
+
+CIS 505: Software Systems
+Homework 2 Part II
+Submitted by: Rohit Dureja
+
+---
+
+Steps involved to run system using RPC
+
+1. use make to compile all files. "make all"
+
+2. in a terminal window, run the server using
+	./poll_server
+
+3. in a seperate terminal window, run the client using
+	./poll_client <address> -options
+
+Instead of step 3, a script has been provided which can be run to simulate a voting scenario. To run the script, after step 2, run
+	chmod u+rx script
+	./script
+NOTE: In running from the script, I am getting a "segmentation fault" warning but the program is working fine. I didn't get time to rectify that problem. Sorry about that.
+
+4. stop server and clean up using make. "make clean"
+
+---
+
+Options for syste using RPCs
+
+	zeroize():				 .\client <IPaddress> -z
+	addvoter(voterid):		 .\client <IPaddress> -a -i <voterID>		
+	votefor(name, voterid):	 .\client <IPaddress> -v -n <name> -i <voterID>
+	listcandidates():		 .\client <IPaddress> -l
+	votecount(name):		 .\client <IPaddress> -c -n <name>
+
+---
